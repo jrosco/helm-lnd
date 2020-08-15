@@ -1,0 +1,17 @@
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: RELEASE-NAME-lightning
+  annotations:
+    "helm.sh/resource-policy": keep
+  labels:
+    app: lightning
+    chart: "lightning-1.0.0"
+    release: "RELEASE-NAME"
+    heritage: "Helm"
+spec:
+  accessModes:
+    - "ReadWriteOnce"
+  resources:
+    requests:
+      storage: "5Gi"
